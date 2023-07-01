@@ -1,0 +1,26 @@
+h2 {
+    width: 100%;
+}
+
+.title {
+    margin: 5px;
+    width: 100%;
+}
+
+.content {
+    margin: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.title a {
+    color: #00a36f;
+    text-decoration: none;
+}
+
+nav a {
+    color: #DC143C;
+    font-size: 20px;
+    margin-left: 70px;
+    text-decoration: none;
+}
