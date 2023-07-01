@@ -1,4 +1,5 @@
 h2 {
+    color: #696969;
     width: 100%;
 }
 
@@ -20,7 +21,13 @@ h2 {
 
 nav a {
     color: #DC143C;
-    font-size: 20px;
-    margin-left: 70px;
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 80px;
     text-decoration: none;
+}
+
+img {
+    width: 450px;
+    padding-bottom: 40px;
 }

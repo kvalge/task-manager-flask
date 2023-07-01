@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <span class="title"><h1>{% block title %} The Main Tasks of Your Lifetime {% endblock %}</h1></span>
-    <div class="content">
-        <h2>Job Search</h2>
-        <h2>Studies</h2>
-        <h2>Payment of Bills</h2>
-        <h2>Entertainment</h2>
-        <h2>Waiting for the Right Weather</h2>
-    </div>
+<span class="title"><h1>{% block title %} The Main Tasks of Your Lifetime {% endblock %}</h1></span>
+<div class="content">
+    <h3>Job Search</h3>
+    <img src="{{ url_for('static', filename='images/job.png') }}"/>
+    <h3>Studies</h3>
+    <img src="{{ url_for('static', filename='images/study.png') }}"/>
+    <h3>Payment of Bills</h3>
+    <img src="{{ url_for('static', filename='images/bills.png') }}"/>
+    <h3>Entertainment</h3>
+    <img src="{{ url_for('static', filename='images/entertainment.png') }}"/>
+    <h3>Waiting for the Right Weather</h3>
+    <img src="{{ url_for('static', filename='images/weather.png') }}"/>
+</div>
 {% endblock %}
