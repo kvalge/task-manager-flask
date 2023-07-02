@@ -2,6 +2,7 @@ from flask import Flask
 
 from config import Config
 from app.extensions import db
+from app.models import job
 
 
 def create_app(config_class=Config):
@@ -10,6 +11,9 @@ def create_app(config_class=Config):
 
     # Initializing Flask extensions
     db.init_app(app)
+
+    with app.app_context():
+        db.create_all()
 
     # Registering blueprints
     from app.main import bp as main_bp
@@ -35,3 +39,7 @@ def create_app(config_class=Config):
         return '<h1>Testing the Flask Application Factory Pattern</h1>'
 
     return app
+
+
+if __name__ == "__main__":
+    create_app().run(debug=True)
