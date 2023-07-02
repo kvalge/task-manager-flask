@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <span class="title"><h1>{% block title %} Add New Job {% endblock %}</h1></span>
-    <div class="content">
-        <h2>New Job</h2>
-    </div>
-{% endblock %}
+<form method="post">
+    <h1 class="mt-4 mb-4">Add New Job</h1>
+    <form action="#" method="post">
+        <div class="form-control form-control-lg">
+            <label for="title">Job Title: </label>
+            <input class="form-control" type="text" id="title" name="title">
+        </div>
+        <div class="form-control form-control-lg">
+            <label for="content">Content: </label>
+            <textarea id="content" name="content" rows="5" cols="133"></textarea>
+        </div>
+        <button name="job" type="submit">To Jobs</button>
+    </form>
+    {% endblock %}
