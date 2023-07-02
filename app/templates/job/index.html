@@ -5,4 +5,22 @@
 <div class="content">
     <h2><a href="/job/new">Add Jobs</a></h2>
 </div>
+<div class="content">
+    <h2>Saved Jobs</h2>
+    {% for job in jobs %}
+    <div>
+        <p>
+            <b>
+                <a href="#">
+                    {{ job.title }}
+                </a>
+            </b>
+        </p>
+        <div class="content">
+            <p>{{ job.content }}</p>
+        </div>
+        <hr>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

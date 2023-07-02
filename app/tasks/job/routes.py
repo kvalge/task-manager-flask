@@ -7,7 +7,8 @@ from app.tasks.job import bp
 
 @bp.route('/')
 def index():
-    return render_template('job/index.html')
+    jobs = Job.query.all()
+    return render_template('job/index.html', jobs=jobs)
 
 
 @bp.route('/new/', methods=('GET', 'POST'))
