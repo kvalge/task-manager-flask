@@ -34,10 +34,6 @@ def create_app(config_class=Config):
     from app.tasks.weather import bp as weather_bp
     app.register_blueprint(weather_bp, url_prefix='/weather')
 
-    @app.route('/test/')
-    def test_page():
-        return '<h1>Testing the Flask Application Factory Pattern</h1>'
-
     return app
 
 
