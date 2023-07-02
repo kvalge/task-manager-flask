@@ -7,6 +7,6 @@ def index():
     return render_template('job/index.html')
 
 
-@bp.route('/java-intern/')
+@bp.route('/new/')
 def categories():
-    return render_template('job/java-intern.html')
+    return render_template('job/new-job.html')
