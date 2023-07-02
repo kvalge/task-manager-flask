@@ -9,4 +9,4 @@ def index():
 
 @bp.route('/mobile/')
 def categories():
-    return render_template('bills/mobile_bill.html')
+    return render_template('bills/mobile.html')
