@@ -11,11 +11,12 @@
 <body>
 <nav>
     <a href="{{ url_for('main.index') }}">Tasks</a>
-    <a href="#">Job Search</a>
-    <a href="#">Studies</a>
-    <a href="#">Payment of Bills</a>
-    <a href="#">Entertainment</a>
-    <a href="#">Waiting for the Right Weather</a>
+    <a href="{{ url_for('job.index') }}">Job Search</a>
+    <a href="{{ url_for('studies.index') }}">Studies</a>
+    <a href="{{ url_for('bills.index') }}">Payment of Bills</a>
+    <a href="{{ url_for('entertainment.index') }}">Entertainment</a>
+    <a href="{{ url_for('weather.index') }}">Waiting for the Right Weather</a>
+
 </nav>
 <hr>
 <div class="content">
