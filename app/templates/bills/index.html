@@ -1,8 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<span class="title"><h1>{% block title %} Bills to Pay {% endblock %}</h1></span>
+<span class="title"><h1>{% block title %} Manage Bills {% endblock %}</h1></span>
 <div class="content">
-    <h2><a href="/bills/mobile">Mobile</a></h2>
+    <h2><a href="/bills/new">Add New Bill</a></h2>
+    <br>
+    <hr>
+</div>
+<div class="content">
+    <h2>Saved Bills</h2>
+    {% for bill in bills %}
+    <div>
+        <p>
+            <b>
+                <a>
+                    {{ bill.service }}
+                </a>
+            </b>
+        </p>
+        <div class="content">
+            <p>{{ bill.period }}</p>
+        </div>
+        <div class="content">
+            <p>{{ bill.price }}</p>
+        </div>
+        <form action="/bills/edit/{{bill.id}}" method=post>
+            <input type="hidden" name="id" value="">
+            <input type="submit" value="Edit" class="button"/>
+        </form>
+        <form action="/bills/delete/{{bill.id}}" method=post>
+            <input type="hidden" name="id" value="">
+            <input type="submit" value="Delete" class="button"/>
+        </form>
+        <hr>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

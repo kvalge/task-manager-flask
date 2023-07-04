@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    <h1 class="mt-4 mb-4">Add New Bill</h1>
+    <form method="post">
+        <div class="form-control form-control-lg">
+            <label for="service">Service: </label>
+            <input class="form-control" type="text" id="service" name="service">
+        </div>
+        <div class="form-control form-control-lg">
+            <label for="period">Period: </label>
+            <input class="form-control" type="text" id="period" name="period">
+        </div>
+        <div class="form-control form-control-lg">
+            <label for="price">Price: </label>
+            <input class="form-control" type="text" id="price" name="price">
+        </div>
+        <button name="bill" type="submit">Add Bill</button>
+    </form>
+    {% endblock %}

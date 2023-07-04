@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="/bills/update/{{bill.id}}" method="post">
+    <h1 class="mt-4 mb-4">Edit Job</h1>
+    <form method="post">
+        <div class="form-control form-control-lg">
+            <label for="service">Service: </label>
+            <input class="form-control" type="text" id="service" name="service" placeholder="{{bill.service}}">
+        </div>
+        <div class="form-control form-control-lg">
+            <label for="period">Period: </label>
+            <input class="form-control" type="text" id="period" name="period"
+                   placeholder="{{bill.period}}">
+        </div>
+        <div class="form-control form-control-lg">
+            <label for="price">Price: </label>
+            <input class="form-control" type="text" id="price" name="price"
+                   placeholder="{{bill.price}}">
+        </div>
+        <button name="bill" type="submit">Update Bill</button>
+    </form>
+    {% endblock %}
