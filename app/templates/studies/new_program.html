@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    <h1 class="mt-4 mb-4">Add New Program</h1>
+    <form method="post">
+        <div class="form-control form-control-lg">
+            <label for="title">Program Title: </label>
+            <input class="form-control" type="text" id="title" name="title">
+        </div>
+              <div class="form-control form-control-lg">
+            <label for="organization">Organization: </label>
+            <input class="form-control" type="text" id="organization" name="organization">
+        </div>
+              <div class="form-control form-control-lg">
+            <label for="description">Description: </label>
+            <input class="form-control" type="text" id="description" name="description">
+        </div>
+        <button name="program" type="submit">Add Program</button>
+    </form>
+    {% endblock %}
