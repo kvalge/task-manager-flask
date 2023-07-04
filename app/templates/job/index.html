@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<span class="title"><h1>{% block title %} The Job Applications {% endblock %}</h1></span>
+<span class="title"><h1>{% block title %} Job Applications {% endblock %}</h1></span>
 <div class="content">
-    <h2><a href="/job/new">Add Jobs</a></h2>
+    <h2><a href="/job/new">Add New Job</a></h2>
+    <br>
+    <hr>
 </div>
 <div class="content">
     <h2>Saved Jobs</h2>
@@ -11,7 +13,7 @@
     <div>
         <p>
             <b>
-                <a href="#">
+                <a>
                     {{ job.title }}
                 </a>
             </b>
@@ -19,6 +21,10 @@
         <div class="content">
             <p>{{ job.content }}</p>
         </div>
+        <form action="/job/delete/{{job.id}}" method=post>
+            <input type="hidden" name="id" value="">
+            <input type="submit" value="Delete" class="button"/>
+        </form>
         <hr>
     </div>
     {% endfor %}

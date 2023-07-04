@@ -12,7 +12,7 @@ def index():
 
 
 @bp.route('/new/', methods=('GET', 'POST'))
-def categories():
+def new():
     if request.method == 'POST':
         new_question = Job(title=request.form['title'],
                            content=request.form['content'])
@@ -20,3 +20,11 @@ def categories():
         db.session.commit()
         return redirect(url_for('job.index'))
     return render_template('job/new-job.html')
+
+
+@bp.route('/delete/<id>', methods=['GET', 'POST'])
+def delete(id):
+    job = Job.query.filter_by(id=id).first()
+    db.session.delete(job)
+    db.session.commit()
+    return index()
