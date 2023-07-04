@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<form  action="/job/update/{{job.id}}" method="post">
+    <h1 class="mt-4 mb-4">Edit Job</h1>
+    <form method="post">
+        <div class="form-control form-control-lg">
+            <label for="title">Job Title: </label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="{{job.title}}">
+        </div>
+        <div class="form-control form-control-lg">
+            <label for="content">Content: </label>
+            <textarea id="content" name="content" rows="5" cols="133" placeholder="{{job.content}}"></textarea>
+        </div>
+        <button name="job" type="submit">Update Job</button>
+    </form>
+    {% endblock %}

@@ -21,6 +21,10 @@
         <div class="content">
             <p>{{ job.content }}</p>
         </div>
+        <form action="/job/edit/{{job.id}}" method=post>
+            <input type="hidden" name="id" value="">
+            <input type="submit" value="Edit" class="button"/>
+        </form>
         <form action="/job/delete/{{job.id}}" method=post>
             <input type="hidden" name="id" value="">
             <input type="submit" value="Delete" class="button"/>
