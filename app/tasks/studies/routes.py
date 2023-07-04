@@ -7,7 +7,8 @@ from app.tasks.studies import bp
 
 @bp.route('/')
 def index():
-    return render_template('studies/index.html')
+    programs = Program.query.all()
+    return render_template('studies/index.html', programs=programs)
 
 
 @bp.route('/new/', methods=('GET', 'POST'))

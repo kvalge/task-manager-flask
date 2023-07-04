@@ -1,11 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<span class="title"><h1>{% block title %} Studies {% endblock %}</h1></span>
+<span class="title"><h1>{% block title %} Study Programs {% endblock %}</h1></span>
 <div class="content">
-    <h2><a href="/studies/new">Add New Study Program</a></h2>
+    <h2><a href="/studies/new">Add New Program</a></h2>
     <br>
     <hr>
-    <h2><a href="/studies/university">University</a></h2>
+</div>
+<div class="content">
+    <h2>Saved Programs</h2>
+    {% for program in programs %}
+    <div>
+        <p>
+            <b>
+                <a>
+                    {{ program.title }}
+                </a>
+            </b>
+        </p>
+        <div class="content">
+            <p>{{ program.organization }}</p>
+        </div>
+                <div class="content">
+            <p>{{ program.description }}</p>
+        </div>
+        <form action="/studies/edit/{{program.id}}" method=post>
+            <input type="hidden" name="id" value="">
+            <input type="submit" value="Edit" class="button"/>
+        </form>
+        <form action="/studies/delete/{{program.id}}" method=post>
+            <input type="hidden" name="id" value="">
+            <input type="submit" value="Delete" class="button"/>
+        </form>
+        <hr>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}
