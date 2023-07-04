@@ -3,6 +3,7 @@ from flask import Flask
 from config import Config
 from app.extensions import db
 from app.models import job
+from app.models import study_program
 
 
 def create_app(config_class=Config):
